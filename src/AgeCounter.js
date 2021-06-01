@@ -1,16 +1,33 @@
-import React, {useState} from "react";
+import React, { useState } from "react";
 
-const AgeCounter = () => {
-    const [age, setAge] = useState(0);
-    return (
-        <div className="button">
-          <button>add</button>
-        </div>
-    )
+const AgeCounter = (props) => {
+  const [age, setAge] = useState("");
+  const [newAge, setNewAge] = useState("");
+  
+  const addAge = () =>
+  {
+    const newCatAge = [...cat, newAge];
+    setAge( newCatAge );
+  }
+
+  const addLife = () => {
+    setAge(age - 1);
+  };
+  return (
+    <div className="AgeCounter">
+      <h4>{props.cat}</h4>
+      <h3>{0}</h3>
+
+      <button onClick={addAge}>Add Year</button>
+      <button onClick={addLife}>New Life</button>
+    </div>
+  );
 }
 export default AgeCounter;
     
-    
+// 4. Pass each name as a prop to the AgeCounter component and render the name above the current 
+// age in a h4 tag.
+
     
     
     
